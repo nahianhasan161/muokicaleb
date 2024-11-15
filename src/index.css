@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("/public/fonts/HelveticaNeue/HelveticaNeue-Medium.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* font-family: 'Big Shoulders Display', cursive;
+font-family: 'Roboto', sans-serif;
+font-family: 'Space Grotesk', sans-serif;
+font-family: 'Inter', sans-serif;
+*/
+body {
+  font-family: "Roboto", cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  /* fonts */
+  .fontfam-bigShoulders {
+    font-family: "Big Shoulders Display", cursive;
+  }
+  .fontfam-helvetica {
+    font-family: "Helvetica Neue";
+  }
+  .fontfam-spaceGrotesk {
+    font-family: "Space Grotesk", sans-serif;
+  }
+
+  /*end fonts */
+  /* Background */
+  .bg-custom-size {
+    background-size: 100% 65%;
+  }
+  .text-bg-img {
+    background-image: url("/public/TextBackground/bg-2.png");
+  }
+  .bg-border-position {
+    background-size: 17rem 9rem;
+    background-position: -20px -3px;
+  }
+  /*End Background */
+}
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply flex  text-center items-center gap-[9px] sm:gap-3 rounded-2xl cursor-pointer;
+  }
+  .btn-primary {
+    font-family: "Helvetica Neue";
+    @apply bg-indigo-primary text-white
+     2xl:text-2xl text-xs font-medium leading-6 py-1 px-4 2xl:py-2 2xl:px-8 2xl:rounded-full;
+  }
+  .btn-secondary {
+    font-family: "Helvetica Neue";
+    @apply bg-white text-indigo-primary
+      text-xs 2xl:text-2xl font-medium leading-6 py-1 px-4 2xl:py-2 2xl:px-8 2xl:rounded-full
+        border;
+  }
+  .btn-submit {
+    font-family: "Inter" sans-serif;
+    @apply bg-indigo-deep text-white text-center 
+      text-xxs sm:text-[15px]  leading-5 tracking-[0.4px]
+       py-2 px-5  sm:py-3 sm:px-6 md:py-2.5 md:px-7 lg:py-3 lg:mx-8 xl:py-[14px] xl:px-[49px]
+       rounded-[32px] 2xl:text-2xl 2xl:pl-7 2xl:pr-6 2xl:py-4;
+  }
+  .btn-cv {
+    font-family: "Helvetica Neue";
+    @apply bg-indigo-primary text-slate-deep
+     sm:text-white text-xs md:text-sm 2xl:text-2xl  font-medium
+      leading-6 py-[3px] px-[15px] whitespace-nowrap
+      sm:pb-[7px] sm:pt-2 sm:pl-[19px] sm:pr-[16px] 2xl:pl-7 2xl:pr-6 2xl:py-4
+      rounded-[16.5px] sm:rounded-[28px];
+  }
+  .btn-nav {
+    @apply rounded-[16.5px] flex gap-[9px] px-[15px] sm:px-4 sm:pb-[6px] pb-[3px] sm:pt-[6px] pt-[3px] cursor-pointer 2xl:pt-[6px] 2xl:pb-2 2xl:pl-4 2xl:pr-3 2xl:text-2xl 2xl:rounded-[20px];
+  }
+  .btn-nav-primary {
+    @apply bg-[#635BFF] text-[#D6D6E3] md:text-white  whitespace-nowrap;
+  }
+  /*End Buttons */
+  /* Content */
+  .text-content-heading {
+    font-family: "Space Grotesk", sans-serif;
+    /* fontfam-spaceGrotesk */
+    @apply text-[23px] sm:text-[36px] lg:text-[48px]  text-indigo-primary
+    font-bold sm:font-medium leading-[23px] sm:leading-[44px] tracking-[-0.4px] sm:tracking-[-2px]
+     
+    /* max-w-[13rem] sm:max-w-none */  max-w-none;
+  }
+  .para-1 {
+    @apply text-xs sm:text-base leading-7 text-slate-primary xl:max-w-[306px] md:max-w-[246px];
+  }
+
+  /* End Content */
+
+  /* Nav */
+  .nav {
+    font-family: "Helvetica Neue";
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    @apply text-[#0A2540] text-xs sm:text-sm font-medium;
+  }
+  .active {
+    @apply relative after:absolute after:w-[5px] after:h-[5px] right-1 after:bg-[#635BFF] after:rounded-full;
+  }
+  .active::after {
+    filter: drop-shadow(0px 0px 3px #635bff);
+  }
+  /* End Nav */
+  /* Container */
+  .container-mx {
+    @apply mx-[17px] sm:mx-[77px] md:mx-[117px] lg:mx-[157px] xl:mx-[217px];
+  }
+  .container-px {
+    @apply px-[17px] sm:px-[77px] md:px-[117px] lg:px-[157px] xl:px-[217px];
+  }
+  /*End Container */
+
+  /* linearGradient */
+}
+.footer_heading_bg_gradient {
+  background: linear-gradient(
+    277deg,
+    #c8bdff 0%,
+    #b5edff 0%,
+    #00cbff 16.64%,
+    #6721ff 64.25%,
+    #c8bdff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* table */
+.table-border {
+  border: 1px solid rgba(171, 181, 197, 0.45);
+}
+.border-shadow {
+  filter: drop-shadow(
+      0px 2.0999999046325684px 3.5843749046325684px rgba(0, 0, 0, 0.02)
+    )
+    drop-shadow(
+      0px 9.600000381469727px 10.074999809265137px rgba(0, 0, 0, 0.03)
+    )
+    drop-shadow(
+      0px 24.299999237060547px 27.028125762939453px rgba(0, 0, 0, 0.04)
+    )
+    drop-shadow(0px 48px 62px rgba(0, 0, 0, 0.06));
+}
